@@ -11,19 +11,19 @@ Milestone 1 set up the dev environment for getting started.
 ## Milestone 2
 Variables that will be used in the game were created. 
 
-- A list of possible words the game generates was created
+- A list of possible words the game generates was created.
 
 ```python
 word_list = ["strawberry", "blueberry", "banana", "kiwi", "grape"]
 ```
-- To set the word for each game, the random module was used
+- To set the word for each game, the random module was used.
 
 ```python
 import random
 word = random.choice(word_list)
 ```
 
-- A variable was created to capture the user's guessed letter and error check the input
+- A variable was created to capture the user's guessed letter and error check the input.
 
 ```python 
 guess = input("Please enter a letter: ")
@@ -35,4 +35,4 @@ else:
 ```
 
 ## Milestone 3
-In Progress
+In Progress.
