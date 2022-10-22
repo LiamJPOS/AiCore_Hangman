@@ -23,3 +23,15 @@ def volume_of_sphere(radius):
     return round(answer, 2)
     
 print(volume_of_sphere(5))
+
+#Default Arguments
+def default_arguments(attributes_to_print):
+    print(attributes_to_print)
+    
+cardigan = {
+    "brand": "Topman", 
+    "material": "wool",
+    "colour" : "grey"
+    }
+
+default_arguments(cardigan)
