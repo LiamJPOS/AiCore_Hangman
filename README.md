@@ -35,4 +35,28 @@ else:
 ```
 
 ## Milestone 3
-In Progress.
+- Functions created to check if guessed letter is in randomly generated word
+- Iterative error checking used when asking for input and further error checking done by keeping guesses lower case
+
+```python
+def check_guess(guess):
+    check = guess.lower()
+    if check in word:
+        print(f"Good guess! {guess} is in the word")
+    else:
+        print(f"Sorry, {guess} is not in the word. Try again.")
+
+def ask_for_input():
+    while True:
+        guess = input("please enter a letter: ")
+        if len(guess) == 1 and guess.isalpha():
+            break
+        else:
+            print("Invalid letter. Please, enter a single alphabetical character.")
+    
+    check_guess(guess)
+
+ask_for_input()
+```
+## Milestone 4
+To be updated
