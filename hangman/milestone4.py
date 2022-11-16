@@ -21,10 +21,38 @@ class Hangman():
         
         #list - a list of guesses already tried
         self.list_of_guesses = []
-        
+       
+    def check_guess(self, guess):
+        check = guess.lower()
+        if check in self.word:
+            print(f"Good guess! {guess} is in the word")
+        else:
+            print(f"Sorry, {guess} is not in the word. Try again.")
+            
+    def ask_for_input(self):
+        while True:
+            guess = input("please enter a letter: ")
+            
+            if not len(guess) == 1 and not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            
+            elif guess in self.list_of_guesses:
+              print("You already tried that letter!")  
+                        
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+
+
+    
+
         
         
 new_game = Hangman(word_list)
 print(new_game.word)
 print(new_game.word_guessed)
 print(new_game.num_letters)
+
+if __name__ == '__main__':
+    #word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
+    new_game.ask_for_input()
