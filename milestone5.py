@@ -15,8 +15,8 @@ class Hangman():
         #list - a list of letters of the word with _ for letters not guessed yet
         self.word_guessed = ["_" for i in self.word]
         
-        #int - number of unique letters in word that have not been guessed yet
-        self.num_letters = len(set(self.word))
+        #int - number of letters in word that have not been guessed yet
+        self.num_letters = len(self.word)
         
         #list - a list of guesses already tried
         self.list_of_guesses = []
@@ -27,13 +27,11 @@ class Hangman():
             print(f"Good guess! {guess} is in the word")
             
             index = 0
-            times_appeared = 0
             for letter in self.word:
                 if check == letter:
                     self.word_guessed[index] = check
-                    times_appeared += 1
+                    self.num_letters -= 1
                 index += 1
-            self.num_letters -= times_appeared
                     
         else:
             self.num_lives -= 1
@@ -45,6 +43,8 @@ class Hangman():
             
     def ask_for_input(self):
         while True:
+            print(self.word_guessed)
+            print(f"There are {self.num_letters} letters left.")
             guess = input("please enter a letter: ")
             
             if not len(guess) == 1 and not guess.isalpha():
@@ -55,10 +55,6 @@ class Hangman():
                         
             else:
                 self.check_guess(guess)
-                
-                
-                print(self.word_guessed)
-                print(f"There are {self.num_letters} unique letters left.")
                 break
 
 #Milestone 5 code logic of the game
@@ -77,7 +73,7 @@ def play_game(word_list):
             
         #lives are greater than 0 and letters remaining are 0 is win condition    
         else:
-            print("Congratulations. You won the game!")
+            print(f"Congratulations. You won the game! The word was {game.word}")
             break
         
 if __name__ == '__main__':
