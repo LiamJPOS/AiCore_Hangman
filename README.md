@@ -129,3 +129,30 @@ def check_guess(self, guess):
                 self.check_guess(guess)
 ```
 
+## Milestone 5
+
+Logic of the game coded by creating a function that assigns the Hangman class to a new variable for each new instance of the game. 
+- Word list and number of lives can be passed in to change the content and difficulty of the game. 
+- Loss condition in function is to check when number of lives is 0 and end the game 
+- If lives are greater than 0, and number of letters remaining greater than 0, the ask_for_input method is called
+- Win condition is reached when number of lives is greater than 0 and number of letters remaining is 0
+
+```python
+def play_game(word_list):
+    game = Hangman(word_list, num_lives=5)
+    while True:
+        
+        #Checks if lives are 0, prints lose message and breaks loop
+        if game.num_lives == 0:
+            print("You lost!")
+            break
+            
+        #Continues if lives greater than 0    
+        if game.num_letters > 0:
+            game.ask_for_input()
+            
+        #lives are greater than 0 and letters remaining are 0 is win condition    
+        else:
+            print(f"Congratulations. You won the game! The word was {game.word}")
+            break
+```

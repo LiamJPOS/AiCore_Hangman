@@ -20,6 +20,7 @@ class Hangman():
         
         #list - a list of guesses already tried
         self.list_of_guesses = []
+     
        
     def check_guess(self, guess):
         check = guess.lower()
